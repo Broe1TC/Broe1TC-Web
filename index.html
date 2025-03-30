@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broe1TC</title>
+    <style>
+        body {
+            background-color: #1a002a;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: linear-gradient(90deg, #4a0072, #6200ea);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .header h1:hover {
+            transform: scale(1.1);
+        }
+        .header button {
+            background-color: #6200ea;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: background 0.3s, transform 0.2s;
+            font-size: 14px;
+            box-shadow: 0px 3px 10px rgba(255, 255, 255, 0.2);
+            width: auto;
+        }
+        .header button:hover {
+            background-color: #4500b5;
+            transform: scale(1.1);
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #2a0050;
+            border-radius: 10px;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        input, textarea, button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            background-color: #6200ea;
+            cursor: pointer;
+        }
+        .videos {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .videos iframe {
+            width: 80%;
+            height: 315px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .footer {
+            background: #3d0066;
+            padding: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .footer a {
+            color: #a566ff;
+            margin: 10px;
+            font-size: 18px;
+            transition: color 0.3s;
+            display: inline-block;
+        }
+        .footer a:hover {
+            color: #ff66ff;
+        }
+        .copyright {
+            margin-top: 10px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+    </style>
+    <script>
+        function toggleForm() {
+            var form = document.getElementById('programForm');
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+                setTimeout(() => { form.style.opacity = '1'; }, 100);
+            } else {
+                form.style.opacity = '0';
+                setTimeout(() => { form.style.display = 'none'; }, 500);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Broe1TC</h1>
+        <button onclick="toggleForm()">Отправить программу</button>
+    </div>
+    <div id="programForm" class="container">
+        <form action="https://formspree.io/f/xblgazvb" method="POST">
+            <input type="text" name="nickname" placeholder="Логин (никнейм)" required>
+            <textarea name="description" placeholder="Описание" required></textarea>
+            <input type="text" name="contact" placeholder="Контакт (Telegram или Discord)" required>
+            <input type="url" name="file_link" placeholder="Ссылка на файл (Mega, Google Drive, Dropbox и т. д.)" required>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+    <div class="videos">
+        <h2>Последние видео</h2>
+        <iframe src="https://www.youtube.com/embed/mcz_mLqFucs" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/1XHALGLZ1yI" allowfullscreen></iframe>
+    </div>
+    <div class="footer">
+        <a href="https://www.youtube.com/@Broe1TC">YouTube</a>
+        <a href="https://t.me/Broe1AntiVirus">Telegram</a>
+        <a href="https://www.twitch.tv/pakosnikkk">Twitch</a>
+        <div class="copyright">© 2025 Broe1TC. Все данные защищены.</div>
+    </div>
+</body>
+</html>
